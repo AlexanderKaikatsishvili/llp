@@ -1,0 +1,602 @@
+/* MIXINS */
+
+@mixin grid()
+  display: grid
+  grid-template-columns: 100px repeat(6, 1fr) 100px
+  grid-template-rows: 1fr
+  @media (max-width: 1024px)
+    grid-template-columns: 100px repeat(4, 1fr) 100px
+  @media (max-width: 576px)
+    grid-template-columns: 16px repeat(4, 1fr) 16px
+
+@mixin min-height()
+  min-height: calc(100vh - 140px)
+
+
+/* VARIABLES */
+
+$color-black: #111
+$color-primary: #1459A3
+$color-white: #fff
+$color-grey: #595959
+
+
+/* BASIC STYLES */
+
+p
+  font:
+    family: Roboto
+    style: normal
+    weight: 300
+    size: 15px
+  line-height: 150%
+  color: $color-grey
+
+button
+  padding: .5rem 2rem
+  display: block
+  width: max-content
+  background-color: $color-white
+  border: 1px solid transparent
+  transition: background-color .2s ease
+  &:hover
+    background-color: unset
+    border: 1px solid $color-white
+    color: $color-white
+
+.slick-slide
+  outline: none
+
+
+/* BASIC ANIMATIONS */
+
+@keyframes fadeInDown
+  0%
+    transform: translateY(20%)
+    opacity: 0
+  100%
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes fadeOutLeft
+  0%
+    transform: translateX(0)
+    opacity: 1
+  100%
+    transform: translateX(-20%)
+    opacity: 0
+
+@keyframes fadeInLeft
+  0%
+    transform: translateX(20%)
+    opacity: 0
+  100%
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes rotate
+  0%
+    transform: rotate(360deg)
+  100%
+    transform: rotate(0deg)
+
+
+/* BASIC CLASSES */
+
+.grid
+  @include grid
+  width: 100%
+  height: 100%
+  position: absolute
+  &-column
+    border-right: 1px solid #E9E9E9
+    &:last-child
+      border-right: unset
+
+.e-mail
+  position: fixed
+  z-index: 40
+  top: 50%
+  left: -40px
+  transform: translateY(-50%) rotate(-90deg)
+  a
+    color: $color-white
+  &-active
+    a
+      color: $color-primary
+
+.social-links
+  position: fixed
+  z-index: 40
+  top: 50%
+  right: 40px
+  transform: translateY(-50%)
+  display: flex
+  flex-direction: column
+  align-items: center
+  a
+    margin: .5rem 0
+  &-active
+    svg
+      path
+        fill: $color-primary
+
+.callback
+  background-color: $color-primary
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  position: fixed
+  bottom: 50px
+  right: 20px
+  z-index: 40
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  transition: all .2s ease
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06), 0px -2px 6px rgba(0, 0, 0, 0.04)
+  &:hover
+    background-color: $color-white
+    border: 1px solid $color-primary
+    svg
+      path
+        fill: $color-primary
+
+.z-index
+  z-index: 30
+
+.strip
+  position: absolute
+  top: 50%
+  transform: translateY(calc(-50%))
+  width: 100%
+  height: calc(100vh/3)
+  background-color: $color-primary
+  z-index: -1
+
+.cover
+  position: absolute
+  top: 70px
+  left: 0
+  bottom: 0
+  width: 100%
+  opacity: 0
+  background: $color-black
+
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  width: 100%
+  background-color: rgba(0,0,0,.9)
+  cursor: pointer
+  z-index: 200
+  display: none
+  transition: all .5s ease
+
+.path-color-primary
+  fill: $color-primary
+
+.mail-color-primary
+  color: $color-primary !important
+
+.w-100
+  width: 100%
+  max-width: 100%
+
+.py-section
+  padding: 4rem 0
+
+.accent-line
+  position: relative
+  &:before
+    content: ""
+    position: absolute
+    display: block
+    height: 8px
+    width: 70px
+    left: -110px
+    top: 36px
+    background-color: $color-primary
+
+.flex-center
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+.title-t1
+  font:
+    family: Geometria, sans-serif
+    weight: bold
+    size: 62px
+  line-height: 78px
+  color: $color-black
+  text-indent: -5px
+
+.title-t2
+  font:
+    family: Geometria, sans-serif
+    weight: bold
+    size: 48px
+  line-height: 60px
+  color: $color-black
+
+.title-t3
+  font:
+    family: Geometria, sans-serif
+    weight: bold
+    size: 27px
+  line-height: 34px
+  color: $color-black
+
+.subtitle-t1
+  font:
+    family: Roboto, sans-serif
+    weight: 300
+    size: 17px
+  line-height: 150%
+
+
+/* HEADER */
+
+header.header
+  @include grid
+  position: fixed
+  z-index: 100
+  width: 100%
+
+.bg-white
+  background-color: rgba(255, 255, 255, 0.9)
+  backdrop-filter: blur(4px)
+  -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1)
+  -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1)
+  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1)
+
+.navbar
+  grid-column: 1 / 9
+  width: 100%
+  margin: 0 auto
+  min-height: 70px
+  @include grid
+  &-logo
+    display: flex
+    align-items: center
+    justify-content: center
+    grid-column: 1
+  &-contacts
+    grid-column: 4 / 6
+    margin: 0 auto
+  &-nav
+    display: flex
+    margin-bottom: 0
+    grid-column: 8
+    padding-left: 0
+    align-items: center
+    justify-content: center
+  &-item
+    list-style-type: none
+
+.navbar-contacts
+  display: flex
+  align-items: center
+  &__arrow
+    cursor: pointer
+
+.navbar-phones
+  position: relative
+  height: 20px
+  width: 120px
+  transform-style: preserve-3d
+  perspective: 1000px
+  &__side-a,
+  &__side-b
+    width: 100%
+    position: absolute
+    height: 100%
+    backface-visibility: hidden
+    transform-origin: 50% 50%
+    transition: all .5s ease-in-out
+    a
+      color: $color-black
+      &:hover
+        text-decoration: none
+  &__side-a
+    transform: rotateX(0deg) translateZ(10px)
+    z-index: 1
+  &__side-b
+    transform: rotateX(90deg) translateZ(10px)
+
+.flip .navbar-phones__side-a
+  transform: rotateX(-90deg) translateZ(10px)
+.flip .navbar-phones__side-b
+  transform: rotateX(0deg) translateZ(10px)
+  z-index: 1
+
+
+/* MAIN */
+
+/* HERO SECTION */
+
+.hero-section
+  @include min-height()
+  background: url("../images/hero-section-grid.png") 50% no-repeat
+  background-size: cover
+  position: fixed
+  width: 100%
+  padding: 70px 0
+  z-index: 20
+  @include grid
+  &__content
+    grid-column: 2 / 8
+    display: flex
+    align-items: center
+    position: relative
+    overflow: hidden
+    @media (max-width: 1024px)
+      grid-column: 2 / 6
+    .hero-slider
+      width: 100%
+      &__description
+        max-width: 570px
+        color: $color-white
+      &__item
+        @include min-height()
+        display: flex
+        flex-direction: column
+        justify-content: center
+        color: $color-white
+        padding: 8rem
+        .title-t2
+          color: $color-white
+          max-width: 560px
+        &--lighting
+          background-repeat: no-repeat
+          background-position: 50%
+          background-image: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 60%), url("../images/hero-section-bg.png")
+          background-size: cover
+        &--monitors
+          background-repeat: no-repeat
+          background-position: 50%
+          background-image: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 60%), url("../images/led.png")
+          background-size: cover
+        &.slick-active
+          .title-t2
+            animation: fadeInLeft 1s both
+          .hero-slider__description
+            animation: fadeInLeft 1s both .5s
+          .order__btn
+            animation: fadeInLeft 1s both 1s
+
+
+
+/* CONTENT CONTAINER */
+
+.content-flow
+  overflow: hidden
+  position: fixed
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 10
+
+
+.content-container
+  padding-top: 100vh
+  width: 100%
+  position: absolute
+  overflow: hidden
+  z-index: 10
+  backface-visibility: hidden
+  transform-style: preserve-3d
+  &__wrapper
+    background-color: $color-white
+    position: relative
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
+    -moz-box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
+    .scroll
+      max-width: 100px
+      position: absolute
+      z-index: -1
+      top: -50px
+      left: 50%
+      transform: translateX(-50%)
+      transform-origin: 50% 50%
+      svg
+        animation: rotate 5s linear infinite
+
+
+/* ABOUT SECTION */
+
+.about-section
+  position: relative
+  //@include grid()
+  &__wrapper
+    grid-column: 2 / 8
+    min-height: calc(100vh - 70px)
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: 1fr
+  &__left
+    grid-column: 1 / 3
+    position: relative
+  &__right
+    grid-column: 3 / 5
+
+
+/**/
+
+.grid-section
+  position: relative
+  .grid-content
+    @include grid
+  .grid-header
+    grid-column: 3 / 6
+    padding-bottom: 4rem
+    @media (max-width: 1024px)
+      grid-column: 2 / 6
+  .grid-body
+    grid-column: 3 / 7
+    max-width: 100%
+    @media (max-width: 1024px)
+      grid-column: 2 / 6
+
+.products-block
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: 1fr
+  &__left
+    grid-column: 1 / 3
+    position: relative
+  &__right
+    grid-column: 3 / 5
+  .play-button
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    cursor: pointer
+
+
+/* FOOTER */
+
+//footer.footer
+//  width: 100%
+//  height: 200px
+//  position: fixed
+//  bottom: 0
+//  opacity: 0
+//  background-color: $color-primary
+
+
+#player
+  position: fixed
+  z-index: 300
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  display: none
+
+video
+  max-width: 100%
+  position: absolute
+
+.order,
+.menu
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  width: 100%
+  min-height: 100vh
+  position: fixed
+  top: 70px
+  &__block
+    transition: all 1s ease
+    &--left
+      background-color: $color-primary
+      display: grid
+      grid-template-columns: 100px repeat(2, 1fr) 100px
+      grid-template-rows: 1fr
+      transform: translateY(calc(-100% - 70px))
+      .content-block
+        grid-column: 2 / 4
+        & > *
+          color: $color-white
+    &--right
+      background-color: $color-white
+      display: grid
+      grid-template-columns: 100px repeat(2, 1fr) 100px
+      grid-template-rows: 1fr
+      transform: translateY(100%)
+      .content-block
+        grid-column: 2 / 4
+
+.transition
+  transform: translateY(0)
+  transition: all 1s ease
+
+.close
+  display: none
+  position: fixed
+  top: 100px
+  right: 40px
+  z-index: 40
+  cursor: pointer
+  transform-origin: center
+  transition: all .4s ease
+  &:hover
+    transform: rotate(360deg)
+
+
+
+
+/* CURSOR STYLING */
+
+.cursor
+  z-index: 9999
+  pointer-events: none
+  position: fixed
+  top: 0
+  left: 0
+  display: none
+
+.cursor__inner
+  z-index: 9999
+  pointer-events: none
+  position: absolute
+  top: 0
+  left: 0
+  border-radius: 50%
+
+.cursor__inner--dot
+  width: 5px
+  height: 5px
+  background: #023da7
+
+.cursor__inner--circle
+  width: 40px
+  height: 40px
+  border: 1px solid #023da7
+
+.cursor__inner--text::after
+  content: ' →'
+  margin-left: 1rem
+  display: block
+  color: #f6cb03
+  font-size: 4rem
+
+@media screen and (min-width: 53em)
+  *,
+  *::after,
+  *::before
+    cursor: none !important
+
+
+/* SLIDER STYLES */
+
+.slider
+  &__item
+    display: flex !important
+    align-items: center
+    & > div
+      width: 50%
+  &__text
+    padding: 2rem
+  &__image
+    animation: fadeOutLeft 1s both .5s
+  &__item
+    h2
+      animation: fadeOutLeft 1s both 1s
+    p
+      animation: fadeOutLeft 1s both 1.5s
+    &.slick-active
+      h2
+        animation: fadeInDown 1s both 1s
+      p
+        animation: fadeInDown 1s both 1.5s
+      .slider__image
+        animation: fadeInLeft 1s both .5s
