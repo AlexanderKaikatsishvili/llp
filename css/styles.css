@@ -586,6 +586,32 @@ header.header {
   cursor: pointer;
 }
 
+/* CLIENTS SECTION */
+.client {
+  height: 150px;
+  filter: grayscale(1);
+}
+.client:hover {
+  filter: grayscale(0);
+}
+.client--shakhtar {
+  background: url("../images/shakhtar.png") 50% no-repeat;
+  background-size: contain;
+}
+.client--arsenal {
+  background: url("../images/arsenal.png") 50% no-repeat;
+  background-size: contain;
+}
+.client--ruh {
+  background: url("../images/ruh.png") 50% no-repeat;
+  background-size: contain;
+}
+.client--riviera {
+  margin: 0 1rem;
+  background: url("../images/riviera.png") 50% no-repeat;
+  background-size: contain;
+}
+
 #player {
   position: fixed;
   z-index: 300;
