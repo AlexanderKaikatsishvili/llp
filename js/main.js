@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
     $(".hero-slider").slick({
-        autoplay:true,
+        // autoplay:true,
         autoplaySpeed:6000,
         speed:600,
         pauseOnHover: false,
@@ -27,6 +27,19 @@ $(document).ready(function(){
         // nextArrow:'<button class="NextArrow"></button>',
     });
 });
+
+
+/* SCROLL INDICATOR */
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+}
 
 
 /* FLIP THE PHONE'S DIVS */
@@ -55,41 +68,43 @@ window.addEventListener('scroll', () => {
 
 /* CHANGING COLOR OF THE SOCIALS LINKS ASIDE */
 
-let email = $('.e-mail');
-let socials = $('.social-links');
-let content = $('.content-container__wrapper');
+// let email = $('.e-mail');
+// let socials = $('.social-links');
+// let content = $('.content-container__wrapper');
+//
+// window.addEventListener('scroll', () => {
+//     let emailHeight = email.offset().top;
+//     let contentHeight = content.offset().top;
+//
+//     let height = $(window).height();
+//     let halfHeight = height / 2;
+//
+//     console.log('***');
+//     console.log(halfHeight);
+//     console.log(contentHeight);
+//
+//     // console.log(emailHeight);
+//     // console.log(contentHeight);
+//
+//     // if(contentHeight < halfHeight) {
+//     //     email.addClass('e-mail-active');
+//     //     socials.addClass('social-links-active');
+//     // } else {
+//     //     email.removeClass('e-mail-active');
+//     //     socials.removeClass('social-links-active');
+//     // }
+//
+//     if(contentHeight < emailHeight) {
+//         email.addClass('e-mail-active');
+//         socials.addClass('social-links-active');
+//     } else {
+//         email.removeClass('e-mail-active');
+//         socials.removeClass('social-links-active');
+//     }
+// });
 
-window.addEventListener('scroll', () => {
-    let emailHeight = email.offset().top;
-    let contentHeight = content.offset().top;
 
-    let height = $(window).height();
-    let halfHeight = height / 2;
-
-    console.log('***');
-    console.log(halfHeight);
-    console.log(contentHeight);
-
-    // console.log(emailHeight);
-    // console.log(contentHeight);
-
-    // if(contentHeight < halfHeight) {
-    //     email.addClass('e-mail-active');
-    //     socials.addClass('social-links-active');
-    // } else {
-    //     email.removeClass('e-mail-active');
-    //     socials.removeClass('social-links-active');
-    // }
-
-    if(contentHeight < emailHeight) {
-        email.addClass('e-mail-active');
-        socials.addClass('social-links-active');
-    } else {
-        email.removeClass('e-mail-active');
-        socials.removeClass('social-links-active');
-    }
-});
-
+/* ORDER AND MENU BLOCKS MANIPULATIONS */
 
 let orderBlock = $(".order__block");
 let menuBlock = $(".menu__block");
@@ -117,7 +132,6 @@ $(".menu-icon").on('click', function(){
         header.toggleClass('bg-white');
     }
 });
-
 
 $(".close").on('click', function(){
     $(".order").delay(1000).queue(function(){
@@ -246,7 +260,7 @@ $('.overlay').on('click', function(){
 });
 
 
-
+/* LAX PLUGIN INITIALIZATION */
 
 window.onload = function() {
     lax.setup(); // init
@@ -263,7 +277,6 @@ window.onload = function() {
 /* CURSOR */
 
 // Cursor animations
-
 
 // Utilities
 const MathUtils = {
@@ -367,7 +380,7 @@ class CursorFx {
         requestAnimationFrame(() => this.render());
     }
     enter() {
-        cursor.scale = 1.5;
+        cursor.scale = 1.3;
     }
     leave() {
         cursor.scale = 1;

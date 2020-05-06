@@ -36,13 +36,14 @@ button
   padding: .5rem 2rem
   display: block
   width: max-content
-  background-color: $color-white
+  background-color: $color-primary
+  color: $color-white
   border: 1px solid transparent
   transition: background-color .2s ease
   &:hover
     background-color: unset
-    border: 1px solid $color-white
-    color: $color-white
+    border: 1px solid $color-primary
+    color: $color-primary
 
 .slick-slide
   outline: none
@@ -100,7 +101,7 @@ button
   left: -40px
   transform: translateY(-50%) rotate(-90deg)
   a
-    color: $color-white
+    color: $color-primary
   &-active
     a
       color: $color-primary
@@ -116,10 +117,10 @@ button
   align-items: center
   a
     margin: .5rem 0
-  &-active
-    svg
-      path
-        fill: $color-primary
+  //&-active
+  //  svg
+  //    path
+  //      fill: $color-primary
 
 .callback
   background-color: $color-primary
@@ -135,7 +136,7 @@ button
   align-items: center
   cursor: pointer
   transition: all .2s ease
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06), 0px -2px 6px rgba(0, 0, 0, 0.04)
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.04), 0 16px 24px rgba(0, 0, 0, 0.06), 0 -2px 6px rgba(0, 0, 0, 0.04)
   &:hover
     background-color: $color-white
     border: 1px solid $color-primary
@@ -250,9 +251,19 @@ header.header
 .bg-white
   background-color: rgba(255, 255, 255, 0.9)
   backdrop-filter: blur(4px)
-  -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1)
-  -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1)
-  box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1)
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
+  -moz-box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
+
+.progress-container
+  position: absolute
+  width: 100%
+  height: 4px
+
+.progress-bar
+  height: 4px
+  background-color: $color-primary
+  width: 0
 
 .navbar
   grid-column: 1 / 9
@@ -340,27 +351,12 @@ header.header
       width: 100%
       &__description
         max-width: 570px
-        color: $color-white
       &__item
         @include min-height()
-        display: flex
-        flex-direction: column
-        justify-content: center
-        color: $color-white
-        padding: 8rem
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
         .title-t2
-          color: $color-white
           max-width: 560px
-        &--lighting
-          background-repeat: no-repeat
-          background-position: 50%
-          background-image: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 60%), url("../images/hero-section-bg.png")
-          background-size: cover
-        &--monitors
-          background-repeat: no-repeat
-          background-position: 50%
-          background-image: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 60%), url("../images/led.png")
-          background-size: cover
         &.slick-active
           .title-t2
             animation: fadeInLeft 1s both
@@ -368,6 +364,20 @@ header.header
             animation: fadeInLeft 1s both .5s
           .order__btn
             animation: fadeInLeft 1s both 1s
+      &__right
+        height: 100%
+        @include min-height()
+        &--lighting
+          background-repeat: no-repeat
+          background-image: url("../images/hero-section-bg-2.png")
+          background-size: contain
+        &--monitors
+          background-repeat: no-repeat
+          background-position: 100%
+          background-image: url("../images/led.png")
+          background-size: cover
+      &__left
+        padding: 6rem
 
 
 
