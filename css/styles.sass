@@ -425,7 +425,6 @@ header.header
 
 .about-section
   position: relative
-  //@include grid()
   &__wrapper
     grid-column: 2 / 8
     min-height: calc(100vh - 70px)
@@ -439,9 +438,9 @@ header.header
     grid-column: 3 / 5
 
 
-/**/
+/* GRID FRAME */
 
-.grid-section
+.grid-frame
   position: relative
   .grid-content
     @include grid
@@ -471,17 +470,6 @@ header.header
     left: 50%
     transform: translate(-50%, -50%)
     cursor: pointer
-
-
-/* FOOTER */
-
-//footer.footer
-//  width: 100%
-//  height: 200px
-//  position: fixed
-//  bottom: 0
-//  opacity: 0
-//  background-color: $color-primary
 
 
 #player

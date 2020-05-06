@@ -519,40 +519,40 @@ header.header {
   grid-column: 3/5;
 }
 
-/**/
-.grid-section {
+/* GRID FRAME */
+.grid-frame {
   position: relative;
 }
-.grid-section .grid-content {
+.grid-frame .grid-content {
   display: grid;
   grid-template-columns: 100px repeat(6, 1fr) 100px;
   grid-template-rows: 1fr;
 }
 @media (max-width: 1024px) {
-  .grid-section .grid-content {
+  .grid-frame .grid-content {
     grid-template-columns: 100px repeat(4, 1fr) 100px;
   }
 }
 @media (max-width: 576px) {
-  .grid-section .grid-content {
+  .grid-frame .grid-content {
     grid-template-columns: 16px repeat(4, 1fr) 16px;
   }
 }
-.grid-section .grid-header {
+.grid-frame .grid-header {
   grid-column: 3/6;
   padding-bottom: 4rem;
 }
 @media (max-width: 1024px) {
-  .grid-section .grid-header {
+  .grid-frame .grid-header {
     grid-column: 2/6;
   }
 }
-.grid-section .grid-body {
+.grid-frame .grid-body {
   grid-column: 3/7;
   max-width: 100%;
 }
 @media (max-width: 1024px) {
-  .grid-section .grid-body {
+  .grid-frame .grid-body {
     grid-column: 2/6;
   }
 }
@@ -577,7 +577,6 @@ header.header {
   cursor: pointer;
 }
 
-/* FOOTER */
 #player {
   position: fixed;
   z-index: 300;
