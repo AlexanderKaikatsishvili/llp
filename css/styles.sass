@@ -368,14 +368,13 @@ header.header
         height: 100%
         @include min-height()
         &--lighting
-          background-repeat: no-repeat
-          background-image: url("../images/hero-section-bg-2.png")
+          background: url("../images/hero-section-bg-2.png") 0 50% no-repeat
           background-size: contain
         &--monitors
-          background-repeat: no-repeat
-          background-position: 100%
-          background-image: url("../images/led.png")
+          background: url("../images/led.png") 0 50% no-repeat
           background-size: cover
+        @media (max-width: 1024px)
+          display: none
       &__left
         padding: 6rem
 

@@ -444,15 +444,17 @@ header.header {
   min-height: calc(100vh - 140px);
 }
 .hero-section__content .hero-slider__right--lighting {
-  background-repeat: no-repeat;
-  background-image: url("../images/hero-section-bg-2.png");
+  background: url("../images/hero-section-bg-2.png") 0 50% no-repeat;
   background-size: contain;
 }
 .hero-section__content .hero-slider__right--monitors {
-  background-repeat: no-repeat;
-  background-position: 100%;
-  background-image: url("../images/led.png");
+  background: url("../images/led.png") 0 50% no-repeat;
   background-size: cover;
+}
+@media (max-width: 1024px) {
+  .hero-section__content .hero-slider__right {
+    display: none;
+  }
 }
 .hero-section__content .hero-slider__left {
   padding: 6rem;
