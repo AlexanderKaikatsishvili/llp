@@ -266,14 +266,6 @@ header.header {
   }
 }
 
-.bg-white {
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(4px);
-  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-}
-
 .progress-container {
   position: absolute;
   width: 100%;
@@ -371,6 +363,24 @@ header.header {
 .flip .navbar-phones__side-b {
   transform: rotateX(0deg) translateZ(10px);
   z-index: 1;
+}
+
+.header--active {
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.header--active .navbar-logo svg path {
+  fill: #111;
+}
+.header--active .navbar-phones__side-a a, .header--active .navbar-phones__side-b a {
+  color: #595959;
+}
+.header--active .menu-icon path {
+  fill: #595959;
 }
 
 /* MAIN */

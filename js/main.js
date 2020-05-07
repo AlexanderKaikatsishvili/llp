@@ -57,10 +57,10 @@ let heroSection = $('.hero-section');
 
 window.addEventListener('scroll', () => {
     if(this.scrollY > 0) {
-        header.addClass('bg-white');
+        header.addClass('header--active');
         heroSection.css('z-index', 'unset');
     } else {
-        header.removeClass('bg-white');
+        header.removeClass('header--active');
         heroSection.css('z-index', '20');
     }
 });
