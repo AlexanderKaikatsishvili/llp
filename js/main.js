@@ -68,40 +68,40 @@ window.addEventListener('scroll', () => {
 
 /* CHANGING COLOR OF THE SOCIALS LINKS ASIDE */
 
-// let email = $('.e-mail');
-// let socials = $('.social-links');
-// let content = $('.content-container__wrapper');
-//
-// window.addEventListener('scroll', () => {
-//     let emailHeight = email.offset().top;
-//     let contentHeight = content.offset().top;
-//
-//     let height = $(window).height();
-//     let halfHeight = height / 2;
-//
-//     console.log('***');
-//     console.log(halfHeight);
-//     console.log(contentHeight);
-//
-//     // console.log(emailHeight);
-//     // console.log(contentHeight);
-//
-//     // if(contentHeight < halfHeight) {
-//     //     email.addClass('e-mail-active');
-//     //     socials.addClass('social-links-active');
-//     // } else {
-//     //     email.removeClass('e-mail-active');
-//     //     socials.removeClass('social-links-active');
-//     // }
-//
-//     if(contentHeight < emailHeight) {
-//         email.addClass('e-mail-active');
-//         socials.addClass('social-links-active');
-//     } else {
-//         email.removeClass('e-mail-active');
-//         socials.removeClass('social-links-active');
-//     }
-// });
+let email = $('.e-mail');
+let socials = $('.social-links');
+let content = $('.content-container__wrapper');
+
+window.addEventListener('scroll', () => {
+    let emailHeight = email.offset().top;
+    let contentHeight = content.offset().top;
+
+    let height = $(window).height();
+    let halfHeight = height / 2;
+
+    console.log('***');
+    console.log(halfHeight);
+    console.log(contentHeight);
+
+    // console.log(emailHeight);
+    // console.log(contentHeight);
+
+    // if(contentHeight < halfHeight) {
+    //     email.addClass('e-mail-active');
+    //     socials.addClass('social-links-active');
+    // } else {
+    //     email.removeClass('e-mail-active');
+    //     socials.removeClass('social-links-active');
+    // }
+
+    if(contentHeight < emailHeight) {
+        email.addClass('e-mail-active');
+        socials.addClass('social-links-active');
+    } else {
+        email.removeClass('e-mail-active');
+        socials.removeClass('social-links-active');
+    }
+});
 
 
 /* ORDER AND MENU BLOCKS MANIPULATIONS */
