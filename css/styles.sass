@@ -18,6 +18,7 @@
 $color-black: #111
 $color-primary: #1459A3
 $color-white: #fff
+$color-white-nature: #f2f2f2
 $color-grey: #595959
 
 
@@ -37,7 +38,7 @@ button
   display: block
   width: max-content
   background-color: $color-primary
-  color: $color-white
+  color: $color-white-nature
   border: 1px solid transparent
   transition: background-color .2s ease
   &:hover
@@ -93,6 +94,9 @@ button
     border-right: 1px solid #E9E9E9
     &:last-child
       border-right: unset
+  &--dark
+    .grid-column
+      border-right: 1px solid #1b1b1b
 
 .e-mail
   position: fixed
@@ -101,7 +105,7 @@ button
   left: -40px
   transform: translateY(-50%) rotate(-90deg)
   a
-    color: $color-primary
+    color: $color-white-nature
   &-active
     a
       color: $color-primary
@@ -138,7 +142,7 @@ button
   transition: all .2s ease
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.04), 0 16px 24px rgba(0, 0, 0, 0.06), 0 -2px 6px rgba(0, 0, 0, 0.04)
   &:hover
-    background-color: $color-white
+    background-color: $color-white-nature
     border: 1px solid $color-primary
     svg
       path
@@ -146,15 +150,6 @@ button
 
 .z-index
   z-index: 30
-
-.strip
-  position: absolute
-  top: 50%
-  transform: translateY(calc(-50%))
-  width: 100%
-  height: calc(100vh/3)
-  background-color: $color-primary
-  z-index: -1
 
 .cover
   position: absolute
@@ -310,7 +305,7 @@ header.header
     transform-origin: 50% 50%
     transition: all .5s ease-in-out
     a
-      color: $color-black
+      color: $color-white-nature
       &:hover
         text-decoration: none
   &__side-a
@@ -348,15 +343,18 @@ header.header
     @media (max-width: 1024px)
       grid-column: 2 / 6
     .hero-slider
+      color: $color-white-nature
       width: 100%
       &__description
         max-width: 570px
+        color: $color-white-nature
       &__item
         @include min-height()
         display: grid
         grid-template-columns: repeat(2, 1fr)
         .title-t2
           max-width: 560px
+          color: $color-white-nature
         &.slick-active
           .title-t2
             animation: fadeInLeft 1s both
@@ -403,7 +401,7 @@ header.header
   backface-visibility: hidden
   transform-style: preserve-3d
   &__wrapper
-    background-color: $color-white
+    background-color: $color-white-nature
     position: relative
     -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
     -moz-box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
@@ -418,6 +416,8 @@ header.header
       transform-origin: 50% 50%
       svg
         animation: rotate 5s linear infinite
+        path
+          fill: $color-white-nature
 
 
 /* ABOUT SECTION */
@@ -532,9 +532,9 @@ video
       .content-block
         grid-column: 2 / 4
         & > *
-          color: $color-white
+          color: $color-white-nature
     &--right
-      background-color: $color-white
+      background-color: $color-white-nature
       display: grid
       grid-template-columns: 100px repeat(2, 1fr) 100px
       grid-template-rows: 1fr
@@ -627,3 +627,12 @@ video
         animation: fadeInDown 1s both 1.5s
       .slider__image
         animation: fadeInLeft 1s both .5s
+
+
+canvas
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: -1
