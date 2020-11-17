@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap')
+
 /* MIXINS */
 
 @mixin grid()
@@ -26,10 +28,10 @@ $color-grey: #595959
 
 p
   font:
-    family: Roboto
+    family: 'Roboto', sans-serif
     style: normal
     weight: 300
-    size: 15px
+    size: 16px
   line-height: 150%
   color: $color-grey
 
@@ -95,6 +97,7 @@ button
     &:last-child
       border-right: unset
   &--dark
+    background-color: rgb(17, 17, 17, 0.8)
     .grid-column
       border-right: 1px solid #1b1b1b
 
@@ -242,6 +245,7 @@ header.header
   position: fixed
   z-index: 100
   width: 100%
+  border-bottom: 1px solid #1b1b1b
 
 .progress-container
   position: absolute
@@ -313,7 +317,8 @@ header.header
   transform: rotateX(0deg) translateZ(10px)
   z-index: 1
 
-.header--active
+header.header--active
+  border-bottom: unset
   transition: all .3s ease
   background-color: rgba(255, 255, 255, 0.9)
   backdrop-filter: blur(4px)
@@ -340,12 +345,12 @@ header.header
 
 .hero-section
   @include min-height()
-  background: url("../images/hero-section-grid.png") 50% no-repeat
+  //background: url("../images/hero-section-grid.png") 50% no-repeat
   background-size: cover
-  position: fixed
+  //position: fixed
   width: 100%
   padding: 70px 0
-  z-index: 20
+  //z-index: 20
   @include grid
   &__content
     grid-column: 2 / 8
@@ -353,6 +358,7 @@ header.header
     align-items: center
     position: relative
     overflow: hidden
+    z-index: 20
     @media (max-width: 1024px)
       grid-column: 2 / 6
     .hero-slider
@@ -364,7 +370,7 @@ header.header
       &__item
         @include min-height()
         display: grid
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(6, 1fr)
         .title-t2
           max-width: 560px
           color: $color-white-nature
@@ -375,19 +381,10 @@ header.header
             animation: fadeInLeft 1s both .5s
           .order__btn
             animation: fadeInLeft 1s both 1s
-      &__right
-        height: 100%
-        @include min-height()
-        &--lighting
-          background: url("../images/hero-section-bg-2.png") 0 50% no-repeat
-          background-size: contain
-        &--monitors
-          background: url("../images/led.png") 0 50% no-repeat
-          background-size: cover
         @media (max-width: 1024px)
           display: none
       &__left
-        padding: 6rem
+        grid-column: 2 / 5
 
 
 
@@ -414,7 +411,7 @@ header.header
   backface-visibility: hidden
   transform-style: preserve-3d
   &__wrapper
-    background-color: $color-white-nature
+    background-color: $color-white
     position: relative
     -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
     -moz-box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1)
@@ -449,6 +446,12 @@ header.header
   &__right
     grid-column: 3 / 5
 
+
+/* PRODUCTS SECTION */
+
+.products-section
+  .grid-block
+    padding: 7rem 0
 
 /* GRID FRAME */
 
@@ -609,11 +612,11 @@ video
   color: #f6cb03
   font-size: 4rem
 
-@media screen and (min-width: 53em)
-  *,
-  *::after,
-  *::before
-    cursor: none !important
+//@media screen and (min-width: 53em)
+//  *,
+//  *::after,
+//  *::before
+//    cursor: none !important
 
 
 /* SLIDER STYLES */
@@ -643,7 +646,7 @@ video
 
 
 canvas
-  position: absolute
+  position: fixed
   top: 0
   left: 0
   width: 100%
