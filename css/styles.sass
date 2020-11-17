@@ -350,8 +350,10 @@ header.header--active
   //position: fixed
   width: 100%
   padding: 70px 0
-  //z-index: 20
+  z-index: 20
   @include grid
+  position: relative
+  overflow: hidden
   &__content
     grid-column: 2 / 8
     display: flex
@@ -403,7 +405,7 @@ header.header--active
 
 
 .content-container
-  padding-top: 100vh
+  //padding-top: 100vh
   width: 100%
   position: absolute
   overflow: hidden
@@ -419,8 +421,8 @@ header.header--active
     .scroll
       max-width: 100px
       position: absolute
-      z-index: -1
-      top: -50px
+      z-index: 20
+      bottom: -50px
       left: 50%
       transform: translateX(-50%)
       transform-origin: 50% 50%
@@ -646,7 +648,7 @@ video
 
 
 canvas
-  position: fixed
+  position: absolute
   top: 0
   left: 0
   width: 100%

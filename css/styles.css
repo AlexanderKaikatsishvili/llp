@@ -399,9 +399,12 @@ header.header--active .menu-icon path {
   background-size: cover;
   width: 100%;
   padding: 70px 0;
+  z-index: 20;
   display: grid;
   grid-template-columns: 100px repeat(6, 1fr) 100px;
   grid-template-rows: 1fr;
+  position: relative;
+  overflow: hidden;
 }
 @media (max-width: 1024px) {
   .hero-section {
@@ -475,7 +478,6 @@ header.header--active .menu-icon path {
 }
 
 .content-container {
-  padding-top: 100vh;
   width: 100%;
   position: absolute;
   overflow: hidden;
@@ -493,8 +495,8 @@ header.header--active .menu-icon path {
 .content-container__wrapper .scroll {
   max-width: 100px;
   position: absolute;
-  z-index: -1;
-  top: -50px;
+  z-index: 20;
+  bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
   transform-origin: 50% 50%;
@@ -768,7 +770,7 @@ video {
 }
 
 canvas {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

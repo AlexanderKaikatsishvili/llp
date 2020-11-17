@@ -58,10 +58,10 @@ let heroSection = $('.hero-section');
 window.addEventListener('scroll', () => {
     if(this.scrollY > 0) {
         header.addClass('header--active');
-        heroSection.css('z-index', 'unset');
+        // heroSection.css('z-index', 'unset');
     } else {
         header.removeClass('header--active');
-        heroSection.css('z-index', '20');
+        // heroSection.css('z-index', '20');
     }
 });
 
@@ -145,7 +145,10 @@ $(".close").on('click', function(){
 
 /* INITIALISATION AOS PLUGIN */
 
-AOS.init();
+AOS.init({
+    offset: -200,
+    once: true,
+});
 
 
 /* GSUP SMOOTH PAGE SCROLL */
@@ -235,7 +238,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '315',
         width: '560',
-        videoId: 'Tlsev6ZepqE',
+        videoId: 'Tj_j2Jy580s',
     });
 }
 
