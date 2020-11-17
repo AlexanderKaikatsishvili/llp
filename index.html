@@ -54,13 +54,11 @@
                     </svg>
                 </div>
             </div>
-            <ul class="navbar-nav">
-                <li class="navbar-item" data-hover="1">
-                    <svg class="menu-icon" width="30" height="30" viewBox="0 0 46 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 30H46V24.9996H0V30ZM0 17.4996H46V12.5004H0V17.4996ZM0 0V5.00039H46V0H0Z" fill="#fff"/>
-                    </svg>
-                </li>
-            </ul>
+            <div class="navbar-nav" data-hover="1">
+                <svg class="menu-icon" width="30" height="30" viewBox="0 0 46 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 30H46V24.9996H0V30ZM0 17.4996H46V12.5004H0V17.4996ZM0 0V5.00039H46V0H0Z" fill="#fff"/>
+                </svg>
+            </div>
         </nav>
     </header>
     <main class="main">
@@ -437,16 +435,16 @@
         <div data-section-blue="1" class="order__block order__block--right">
             <div class="content-block flex-center">
                 <h2 class="title-t2">Оформить заказ</h2>
-                <p class="hero-slider__description">
+                <p>
                     Компания Lumen Light Pro специализируется на продаже и установке передового внутреннего.
                 </p>
                 <form class="order-form" action="">
-                    <input required class="order-form__input" type="text">
-                    <input required class="order-form__input" type="email">
-                    <input required class="order-form__input" type="tel">
-                    <textarea class="order-form__input" name="" id="" cols="30" rows="10"></textarea>
+                    <input required class="order-form__input" type="text" placeholder="ФИО*">
+                    <input required class="order-form__input" type="email" placeholder="E-mail*">
+                    <input required class="order-form__input" type="tel" placeholder="Телефон*">
+                    <textarea class="order-form__input" name="" id="" cols="30" rows="3" placeholder="Сообщение"></textarea>
                 </form>
-                <button>ЗАКАЗАТЬ</button>
+                <button class="btn-secondary">ОТПРАВИТЬ</button>
             </div>
         </div>
     </div>
@@ -454,15 +452,14 @@
     <div class="menu">
         <div data-section-blue="1" class="menu__block menu__block--left">
             <div class="content-block flex-center">
-                <ul>
-                    <li><h3 class="title-t3">Продукция</h3></li>
-                    <li><h3 class="title-t3">Новости</h3></li>
-                    <li><h3 class="title-t3">Галерея</h3></li>
-                    <li><h3 class="title-t3">Оформить заказ</h3></li>
+                <ul class="menu-list">
+                    <li><a href="">О нас</a></li>
+                    <li><a href="">Продукция</a></li>
+                    <li><a href="">Проекты</a></li>
+                    <li><a href="">Этапы работ</a></li>
+                    <li><a href="">Клиенты</a></li>
+                    <li><a href="">Оформить заказ</a></li>
                 </ul>
-                <p class="hero-slider__description">
-                    Компания Lumen Light Pro специализируется на продаже и установке передового внутреннего.
-                </p>
             </div>
         </div>
     </div>

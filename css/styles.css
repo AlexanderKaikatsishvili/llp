@@ -26,6 +26,15 @@ button:hover {
   border: 1px solid #1459A3;
   color: #1459A3;
 }
+button.btn-secondary {
+  background-color: #fff;
+  color: #1459A3;
+}
+button.btn-secondary:hover {
+  background-color: unset;
+  border: 1px solid #fff;
+  color: #fff;
+}
 
 .slick-slide {
   outline: none;
@@ -84,9 +93,9 @@ button:hover {
     grid-template-columns: 100px repeat(4, 1fr) 100px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 800px) {
   .grid {
-    grid-template-columns: 16px repeat(4, 1fr) 16px;
+    grid-template-columns: 50px repeat(4, 1fr) 50px;
   }
 }
 .grid-column {
@@ -115,6 +124,11 @@ button:hover {
 .e-mail-active a {
   color: #1459A3;
 }
+@media (max-width: 1024px) {
+  .e-mail {
+    display: none;
+  }
+}
 
 .social-links {
   position: fixed;
@@ -131,6 +145,11 @@ button:hover {
 }
 .social-links-active svg path {
   fill: #1459A3;
+}
+@media (max-width: 1024px) {
+  .social-links {
+    display: none;
+  }
 }
 
 .callback {
@@ -228,6 +247,7 @@ button:hover {
   line-height: 78px;
   color: #111;
   text-indent: -5px;
+  margin-bottom: 2rem;
 }
 
 .title-t2 {
@@ -236,6 +256,12 @@ button:hover {
   font-size: 48px;
   line-height: 60px;
   color: #111;
+}
+@media (max-width: 800px) {
+  .title-t2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
 }
 
 .title-t3 {
@@ -268,9 +294,9 @@ header.header {
     grid-template-columns: 100px repeat(4, 1fr) 100px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 800px) {
   header.header {
-    grid-template-columns: 16px repeat(4, 1fr) 16px;
+    grid-template-columns: 50px repeat(4, 1fr) 50px;
   }
 }
 
@@ -300,9 +326,9 @@ header.header {
     grid-template-columns: 100px repeat(4, 1fr) 100px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 800px) {
   .navbar {
-    grid-template-columns: 16px repeat(4, 1fr) 16px;
+    grid-template-columns: 50px repeat(4, 1fr) 50px;
   }
 }
 .navbar-logo {
@@ -310,6 +336,14 @@ header.header {
   align-items: center;
   justify-content: center;
   grid-column: 1;
+}
+.navbar-logo svg {
+  max-width: 100%;
+}
+@media (max-width: 800px) {
+  .navbar-logo svg {
+    padding: 8px;
+  }
 }
 .navbar-contacts {
   grid-column: 4/6;
@@ -325,6 +359,14 @@ header.header {
 }
 .navbar-item {
   list-style-type: none;
+}
+@media (max-width: 1024px) {
+  .navbar .navbar-contacts {
+    grid-column: 2/6;
+  }
+  .navbar .navbar-nav {
+    grid-column: 6;
+  }
 }
 
 .navbar-contacts {
@@ -411,9 +453,9 @@ header.header--active .menu-icon path {
     grid-template-columns: 100px repeat(4, 1fr) 100px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 800px) {
   .hero-section {
-    grid-template-columns: 16px repeat(4, 1fr) 16px;
+    grid-template-columns: 50px repeat(4, 1fr) 50px;
   }
 }
 .hero-section__content {
@@ -457,11 +499,16 @@ header.header--active .menu-icon path {
 }
 @media (max-width: 1024px) {
   .hero-section__content .hero-slider__item {
-    display: none;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .hero-section__content .hero-slider__left {
   grid-column: 2/5;
+}
+@media (max-width: 1024px) {
+  .hero-section__content .hero-slider__left {
+    grid-column: 1/5;
+  }
 }
 
 /* CONTENT CONTAINER */
@@ -546,9 +593,9 @@ header.header--active .menu-icon path {
     grid-template-columns: 100px repeat(4, 1fr) 100px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 800px) {
   .grid-frame .grid-content {
-    grid-template-columns: 16px repeat(4, 1fr) 16px;
+    grid-template-columns: 50px repeat(4, 1fr) 50px;
   }
 }
 .grid-frame .grid-header {
@@ -665,10 +712,6 @@ video {
 .menu__block--left .content-block {
   grid-column: 2/4;
 }
-.order__block--left .content-block > *,
-.menu__block--left .content-block > * {
-  color: #f2f2f2;
-}
 .order__block--right,
 .menu__block--right {
   background-color: #1459A3;
@@ -682,9 +725,11 @@ video {
 .menu__block--right .content-block {
   grid-column: 2/4;
 }
-.order__block--right .content-block > *,
-.menu__block--right .content-block > * {
-  color: #f2f2f2;
+.order__block--right .content-block .title-t2,
+.order__block--right .content-block p,
+.menu__block--right .content-block .title-t2,
+.menu__block--right .content-block p {
+  color: #fff;
 }
 
 .order {
@@ -697,6 +742,22 @@ video {
 }
 .order-form__input {
   margin-bottom: 1rem;
+  border: none;
+  padding: 0.4rem 1rem;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-list li {
+  margin: 1rem;
+}
+.menu-list li a {
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .transition {

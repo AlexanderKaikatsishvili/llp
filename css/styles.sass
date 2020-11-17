@@ -8,8 +8,10 @@
   grid-template-rows: 1fr
   @media (max-width: 1024px)
     grid-template-columns: 100px repeat(4, 1fr) 100px
-  @media (max-width: 576px)
-    grid-template-columns: 16px repeat(4, 1fr) 16px
+  @media (max-width: 800px)
+    grid-template-columns: 50px repeat(4, 1fr) 50px
+  //@media (max-width: 576px)
+  //  grid-template-columns: 16px repeat(4, 1fr) 16px
 
 @mixin min-height()
   min-height: calc(100vh - 140px)
@@ -47,6 +49,13 @@ button
     background-color: unset
     border: 1px solid $color-primary
     color: $color-primary
+  &.btn-secondary
+    background-color: $color-white
+    color: $color-primary
+    &:hover
+      background-color: unset
+      border: 1px solid $color-white
+      color: $color-white
 
 .slick-slide
   outline: none
@@ -112,6 +121,8 @@ button
   &-active
     a
       color: $color-primary
+  @media (max-width: 1024px)
+    display: none
 
 .social-links
   position: fixed
@@ -128,6 +139,8 @@ button
     svg
       path
         fill: $color-primary
+  @media (max-width: 1024px)
+    display: none
 
 .callback
   background-color: $color-primary
@@ -213,6 +226,7 @@ button
   line-height: 78px
   color: $color-black
   text-indent: -5px
+  margin-bottom: 2rem
 
 .title-t2
   font:
@@ -221,6 +235,9 @@ button
     size: 48px
   line-height: 60px
   color: $color-black
+  @media (max-width: 800px)
+    font-size: 40px
+    line-height: 50px
 
 .title-t3
   font:
@@ -268,6 +285,10 @@ header.header
     align-items: center
     justify-content: center
     grid-column: 1
+    svg
+      max-width: 100%
+      @media (max-width: 800px)
+        padding: 8px
   &-contacts
     grid-column: 4 / 6
     margin: 0 auto
@@ -280,6 +301,11 @@ header.header
     justify-content: center
   &-item
     list-style-type: none
+  @media (max-width: 1024px)
+    .navbar-contacts
+      grid-column: 2/6
+    .navbar-nav
+      grid-column: 6
 
 .navbar-contacts
   display: flex
@@ -384,9 +410,11 @@ header.header--active
           .order__btn
             animation: fadeInLeft 1s both 1s
         @media (max-width: 1024px)
-          display: none
+          grid-template-columns: repeat(4, 1fr)
       &__left
         grid-column: 2 / 5
+        @media (max-width: 1024px)
+          grid-column: 1 / 5
 
 
 
@@ -551,8 +579,6 @@ video
       transform: translateX(-100%)
       .content-block
         grid-column: 2 / 4
-        & > *
-          color: $color-white-nature
     &--right
       background-color: $color-primary
       display: grid
@@ -562,8 +588,9 @@ video
       transform: translateX(100%)
       .content-block
         grid-column: 2 / 4
-        & > *
-          color: $color-white-nature
+        .title-t2,
+        p
+          color: $color-white
 .order
   left: 50%
   grid-template-columns: repeat(3, 1fr) 100px
@@ -572,6 +599,20 @@ video
     flex-direction: column
     &__input
       margin-bottom: 1rem
+      border: none
+      padding: 0.4rem 1rem
+
+.menu
+  &-list
+    list-style: none
+    padding: 0
+    margin: 0
+    li
+      margin: 1rem
+      a
+        font-size: 30px
+        color: $color-white
+        text-decoration: none
 
 .transition
   transform: translateX(0)
