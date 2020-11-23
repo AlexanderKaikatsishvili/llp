@@ -121,6 +121,9 @@ button
   &-active
     a
       color: $color-primary
+  &-active-imp
+    a
+      color: $color-white-nature !important
   @media (max-width: 1024px)
     display: none
 
@@ -139,6 +142,10 @@ button
     svg
       path
         fill: $color-primary
+  &-active-imp
+    svg
+      path
+        fill: $color-white-nature
   @media (max-width: 1024px)
     display: none
 
@@ -591,8 +598,15 @@ video
         p
           color: $color-white
 .order
-  left: 50%
+  width: 100%
+  left: 0
   grid-template-columns: repeat(3, 1fr) 100px
+  &__block
+    &--right
+      transform: translateY(100%)
+      @include grid
+      .content-block
+        grid-column: 2 / 5
   &-form
     display: flex
     flex-direction: column

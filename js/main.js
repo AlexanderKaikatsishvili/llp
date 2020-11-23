@@ -108,19 +108,9 @@ $(".order__btn").on('click', function(){
         $( this ).dequeue();
     });
     if(orderBlock.hasClass('transition')) {
-        email.addClass('e-mail-active');
-        socials.addClass('social-links-active');
-        header.addClass('bg-white');
-    }
-});
-
-$(".menu-icon").on('click', function(){
-    $(".menu").toggleClass("z-index");
-    menuBlock.toggleClass('transition');
-    if(menuBlock.hasClass('transition')) {
-        email.toggleClass('e-mail-active');
-        socials.toggleClass('social-links-active');
-        header.toggleClass('bg-white');
+        email.addClass('e-mail-active-imp');
+        socials.addClass('social-links-active-imp');
+        // header.addClass('header--active');
     }
 });
 
@@ -131,6 +121,16 @@ $(".close").on('click', function(){
     });
     orderBlock.removeClass('transition');
     $(".close").removeClass('d-block');
+    email.removeClass('e-mail-active-imp');
+    socials.removeClass('social-links-active-imp');
+});
+
+$(".menu-icon").on('click', function(){
+    $(".menu").toggleClass("z-index");
+    menuBlock.toggleClass('transition');
+    if(menuBlock.hasClass('transition')) {
+        // email.toggleClass('e-mail-active-imp');
+    }
 });
 
 

@@ -124,6 +124,9 @@ button.btn-secondary:hover {
 .e-mail-active a {
   color: #1459A3;
 }
+.e-mail-active-imp a {
+  color: #f2f2f2 !important;
+}
 @media (max-width: 1024px) {
   .e-mail {
     display: none;
@@ -145,6 +148,9 @@ button.btn-secondary:hover {
 }
 .social-links-active svg path {
   fill: #1459A3;
+}
+.social-links-active-imp svg path {
+  fill: #f2f2f2;
 }
 @media (max-width: 1024px) {
   .social-links {
@@ -728,8 +734,28 @@ video {
 }
 
 .order {
-  left: 50%;
+  width: 100%;
+  left: 0;
   grid-template-columns: repeat(3, 1fr) 100px;
+}
+.order__block--right {
+  transform: translateY(100%);
+  display: grid;
+  grid-template-columns: 100px repeat(6, 1fr) 100px;
+  grid-template-rows: 1fr;
+}
+@media (max-width: 1024px) {
+  .order__block--right {
+    grid-template-columns: 100px repeat(4, 1fr) 100px;
+  }
+}
+@media (max-width: 800px) {
+  .order__block--right {
+    grid-template-columns: 50px repeat(4, 1fr) 50px;
+  }
+}
+.order__block--right .content-block {
+  grid-column: 2/5;
 }
 .order-form {
   display: flex;
