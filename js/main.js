@@ -49,6 +49,17 @@ $(".navbar-contacts__arrow").on('click', function(){
 });
 
 
+/* ADDING SMOOTH SCROLLING HREF */
+
+$(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
+});
+
+
 /* CHANGE COLOR OF THE LINKS AFTER SCROLLING THE PAGE */
 /* MAKE THE HERO SECTION ON THE TOP OF THE PAGE */
 
@@ -70,31 +81,11 @@ window.addEventListener('scroll', () => {
 
 let email = $('.e-mail');
 let socials = $('.social-links');
-let content = $('.content-container__wrapper');
+
+let viewportHeight = $(window).height();
 
 window.addEventListener('scroll', () => {
-    let emailHeight = email.offset().top;
-    let contentHeight = content.offset().top;
-
-    let height = $(window).height();
-    let halfHeight = height / 2;
-
-    console.log('***');
-    console.log(halfHeight);
-    console.log(contentHeight);
-
-    // console.log(emailHeight);
-    // console.log(contentHeight);
-
-    // if(contentHeight < halfHeight) {
-    //     email.addClass('e-mail-active');
-    //     socials.addClass('social-links-active');
-    // } else {
-    //     email.removeClass('e-mail-active');
-    //     socials.removeClass('social-links-active');
-    // }
-
-    if(contentHeight < emailHeight) {
+    if(this.scrollY > viewportHeight / 2) {
         email.addClass('e-mail-active');
         socials.addClass('social-links-active');
     } else {
@@ -265,16 +256,16 @@ $('.overlay').on('click', function(){
 
 /* LAX PLUGIN INITIALIZATION */
 
-window.onload = function() {
-    lax.setup(); // init
-
-    const updateLax = () => {
-        lax.update(window.scrollY);
-        window.requestAnimationFrame(updateLax);
-    };
-
-    window.requestAnimationFrame(updateLax);
-};
+// window.onload = function() {
+//     lax.setup(); // init
+//
+//     const updateLax = () => {
+//         lax.update(window.scrollY);
+//         window.requestAnimationFrame(updateLax);
+//     };
+//
+//     window.requestAnimationFrame(updateLax);
+// };
 
 
 /* CURSOR */
