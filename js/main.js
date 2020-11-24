@@ -1,3 +1,10 @@
+/* PRELOADER INITIATION */
+
+$(window).on('load', function() {
+    $('.preloader').delay(2000).fadeOut('slow');
+});
+
+
 /* SLICK SLIDER INITIATION */
 
 $(document).ready(function(){

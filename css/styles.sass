@@ -61,6 +61,74 @@ button
   outline: none
 
 
+/* PRELOADER STYLES */
+
+.preloader
+  position: fixed
+  width: 100%
+  height: 100%
+  z-index: 200
+  background-color: $color-black
+  display: flex
+  justify-content: center
+  align-items: center
+  &__logo
+    animation: pulse 2s infinite
+  &__circle
+    border-radius: 50%
+    border: 2px solid $color-grey
+    width: 200px
+    height: 200px
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    margin: auto
+    box-sizing: border-box
+    background-clip: padding-box
+    transform-origin: 50% 60%
+    transform: perspective(200px)
+    animation: spinner-wiggle 1.2s infinite
+    &:before,
+    &:after
+      content: ""
+      position: absolute
+      margin: -4px
+      box-sizing: inherit
+      width: inherit
+      height: inherit
+      border-radius: inherit
+      opacity: .05
+      border: inherit
+      border-color: transparent
+      animation: spinner-spin 2s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, spinner-fade 2s linear infinite
+    &:before
+      border-top-color: $color-white
+    &:after
+      border-top-color: $color-white
+      animation-delay: 0.5s
+
+@keyframes spinner-spin
+  100%
+    transform: rotate(360deg)
+
+@keyframes spinner-fade
+  20%
+    opacity: .1
+  40%
+    opacity: 1
+  60%
+    opacity: .1
+
+@keyframes pulse
+  0%
+    opacity: 1
+  50%
+    opacity: .5
+  100%
+    opacity: 1
+
+
 /* BASIC ANIMATIONS */
 
 @keyframes fadeInDown
