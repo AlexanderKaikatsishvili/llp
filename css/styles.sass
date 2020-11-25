@@ -648,15 +648,18 @@ video
   display: grid
   grid-template-columns: repeat(2, 1fr)
   min-height: calc(100vh - 70px)
-  //z-index: 30
+  @media (max-width: 699px)
+    grid-template-columns: 1fr
   &__block
     transition: all 1s ease
-    background: $color-primary
     &--left
       transition: all 1s ease
+      background: $color-primary url("../images/order-bg.svg")
       display: grid
       grid-template-columns: 100px repeat(2, 1fr) 100px
       transform: translateY(calc(-100% - 70px))
+      @media (max-width: 1024px)
+        grid-template-columns: 50px repeat(2, 1fr) 50px
       .content-block
         grid-column: 2 / 4
     &--right
@@ -665,6 +668,10 @@ video
       grid-template-columns: 100px repeat(2, 1fr) 100px
       transform: translateY(100%)
       background-color: $color-white-nature
+      @media (max-width: 1024px)
+        grid-template-columns: 50px repeat(2, 1fr) 50px
+      @media (max-width: 699px)
+        display: none
       .content-block
         grid-column: 2 / 4
   &-list
@@ -873,6 +880,6 @@ canvas
   display: none
   position: absolute
   z-index: 500
-  width: 100%
-  height: 100%
+  width: 40px
+  height: 32px
   cursor: pointer
