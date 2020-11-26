@@ -51,7 +51,7 @@ p
     family: 'Roboto', sans-serif
     style: normal
     weight: 300
-    size: 16px
+    size: 15px
   line-height: 150%
   color: $color-grey
 
@@ -535,7 +535,6 @@ header.header--active,
 
 
 .content-container
-  //padding-top: 100vh
   width: 100%
   position: absolute
   overflow: hidden
@@ -646,27 +645,94 @@ header.header--active,
         cursor: pointer
 
 
+
 /* CLIENTS SECTION */
 
-.client
-  height: 150px
-  filter: grayscale(1)
-  &:hover
-    filter: grayscale(0)
-  &--shakhtar
-    background: url("../images/shakhtar.png") 50% no-repeat
-    background-size: contain
-  &--arsenal
-    background: url("../images/arsenal.png") 50% no-repeat
-    background-size: contain
-  &--ruh
-    background: url("../images/ruh.png") 50% no-repeat
-    background-size: contain
-  &--riviera
-    margin: 0 1rem
-    background: url("../images/riviera.png") 50% no-repeat
-    background-size: contain
+.clients-section
+  .grid-frame
+    .grid-body
+      .grid-block
+        @media (max-width: 699px)
+          grid-template-columns: repeat(2, 1fr)
+  .client
+    height: 150px
+    filter: grayscale(1)
+    &:hover
+      filter: grayscale(0)
+    &--shakhtar
+      background: url("../images/shakhtar.png") 50% no-repeat
+      background-size: contain
+    &--arsenal
+      background: url("../images/arsenal.png") 50% no-repeat
+      background-size: contain
+    &--ruh
+      background: url("../images/ruh.png") 50% no-repeat
+      background-size: contain
+    &--riviera
+      margin: 0 1rem
+      background: url("../images/riviera.png") 50% no-repeat
+      background-size: contain
 
+
+/* FOOTER */
+
+.footer
+  background-color: $color-primary
+  position: relative
+  @include grid
+  padding-top: 2rem
+  padding-bottom: 2rem
+  @media (max-width: 1440px)
+    padding-bottom: 0
+  p,a
+    color: #A1CFFF
+    font-size: 12px
+  &-title
+    color: $color-white
+  &__nav
+    grid-column: 2
+    ul
+      list-style: none
+      padding: 0
+      margin: 0
+      li
+        a
+          text-decoration: none
+  &__order
+    grid-column: 3
+  &__rights
+    grid-column: 4 / 6
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    @media (max-width: 1440px)
+      grid-row: 2
+      grid-column: 1 / 7
+      background: #104b8a
+      padding: 2rem
+    p
+      margin-bottom: 0
+      margin-top: .5rem
+      font-size: 13px
+  &__contacts
+    grid-column: 6
+    display: flex
+    flex-direction: column
+    .footer-social-links
+      a
+        margin-right: 1rem
+    a
+      font-size: 14px
+    @media (max-width: 1440px)
+      grid-column: 4
+  &__info
+    grid-column: 7
+    .developer
+      a
+        text-decoration: underline
+    @media (max-width: 1440px)
+      grid-column: 5
 
 #player
   position: fixed
