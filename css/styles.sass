@@ -28,6 +28,24 @@ $color-grey: #595959
 
 /* BASIC STYLES */
 
+/* CUSTOM SCROLL STYLES */
+
+/* width */
+::-webkit-scrollbar
+  width: 4px
+
+/* Track */
+::-webkit-scrollbar-track
+  background: $color-white-nature
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: $color-primary
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: $color-primary
+
 p
   font:
     family: 'Roboto', sans-serif
@@ -64,13 +82,13 @@ button
 /* PRELOADER STYLES */
 
 .preloader
-  display: none
+  //display: none
   position: fixed
   width: 100%
   height: 100%
   z-index: 200
   background-color: $color-black
-  //display: flex
+  display: flex
   justify-content: center
   align-items: center
   &__logo
@@ -181,7 +199,7 @@ button
 
 .e-mail
   position: fixed
-  z-index: 40
+  z-index: 100
   top: 50%
   left: -40px
   transform: translateY(-50%) rotate(-90deg)
@@ -198,7 +216,7 @@ button
 
 .social-links
   position: fixed
-  z-index: 40
+  z-index: 100
   top: 50%
   right: 40px
   transform: translateY(-50%)
@@ -245,7 +263,7 @@ button
         fill: $color-primary
 
 .z-index
-  z-index: 30
+  z-index: 90
 
 .overlay
   position: fixed
@@ -331,7 +349,7 @@ button
 header.header
   @include grid
   position: fixed
-  z-index: 100
+  z-index: 80
   width: 100%
   border-bottom: 1px solid #1b1b1b
 
@@ -388,7 +406,7 @@ header.header
 .navbar-phones
   position: relative
   height: 20px
-  width: 120px
+  width: 150px
   transform-style: preserve-3d
   perspective: 1000px
   &__side-a,
@@ -415,7 +433,8 @@ header.header
   transform: rotateX(0deg) translateZ(10px)
   z-index: 1
 
-header.header--active
+header.header--active,
+.header--active-imp
   border-bottom: unset
   transition: all .3s ease
   background-color: rgba(255, 255, 255, 0.9)
@@ -427,14 +446,18 @@ header.header--active
     svg
       path
         fill: $color-black
+  .navbar-contacts__arrow
+    svg
+      path
+        stroke: $color-grey
   .navbar-phones
     &__side-a,
     &__side-b
       a
         color: $color-grey
-  .menu-icon
-    path
-      fill: $color-grey
+  #menu-icon
+    span
+      background: $color-grey
 
 
 /* MAIN */
@@ -833,7 +856,7 @@ canvas
   position: absolute
   height: 2px
   width: 100%
-  background: $color-white
+  background: $color-white-nature
   opacity: 1
   left: 0
   -webkit-transform: rotate(0deg)

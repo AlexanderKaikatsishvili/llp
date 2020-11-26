@@ -1,8 +1,8 @@
 /* PRELOADER INITIATION */
 
-// $(window).on('load', function() {
-//     $('.preloader').delay(2000).fadeOut('slow');
-// });
+$(window).on('load', function() {
+    $('.preloader').delay(0).fadeOut('slow');
+});
 
 
 /* SLICK SLIDER INITIATION */
@@ -76,10 +76,8 @@ let heroSection = $('.hero-section');
 window.addEventListener('scroll', () => {
     if(this.scrollY > 0) {
         header.addClass('header--active');
-        // heroSection.css('z-index', 'unset');
     } else {
         header.removeClass('header--active');
-        // heroSection.css('z-index', '20');
     }
 });
 
@@ -108,7 +106,7 @@ let orderBlock = $(".order__block");
 let menuBlock = $(".menu__block");
 
 $(".order__btn").on('click', function(){
-    $(".order").css("z-index", "30");
+    $(".order").css("z-index", "90");
     orderBlock.addClass('transition');
     $('.close').delay(1000).queue(function(){
         $( this ).addClass('d-block');
@@ -117,7 +115,7 @@ $(".order__btn").on('click', function(){
     if(orderBlock.hasClass('transition')) {
         email.addClass('e-mail-active-imp');
         socials.addClass('social-links-active-imp');
-        // header.addClass('header--active');
+        header.addClass('header--active-imp');
     }
 });
 
@@ -130,6 +128,7 @@ $(".close").on('click', function(){
     $(".close").removeClass('d-block');
     email.removeClass('e-mail-active-imp');
     socials.removeClass('social-links-active-imp');
+    header.removeClass('header--active-imp');
 });
 
 $("#menu-icon").on('click', function(){
@@ -140,6 +139,7 @@ $("#menu-icon").on('click', function(){
     menuBlock.addClass('transition');
     email.addClass('e-mail-active-imp');
     socials.addClass('social-links-active-imp-b');
+    header.addClass('header--active-imp');
 });
 
 $("#menu-icon-wrapper").on('click', function(){
@@ -147,6 +147,8 @@ $("#menu-icon-wrapper").on('click', function(){
     menuBlock.removeClass('transition');
     email.removeClass('e-mail-active-imp');
     socials.removeClass('social-links-active-imp-b');
+    header.removeClass('header--active-imp');
+
     $(".menu").delay(1000).queue(function(){
         $( this ).removeClass("z-index");
         $( this ).dequeue();
