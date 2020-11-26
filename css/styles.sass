@@ -497,6 +497,8 @@ header.header--active,
       &__description
         max-width: 570px
         color: $color-white-nature
+        margin-top: 1rem
+        margin-bottom: 2rem
       &__item
         @include min-height()
         display: grid
@@ -588,8 +590,24 @@ header.header--active,
 /* PRODUCTS SECTION */
 
 .products-section
-  .grid-block
-    padding: 7rem 0
+  .product-item
+    background-size: cover
+    min-height: 350px
+    filter: brightness(0.6)
+    h3
+      color: $color-white
+      font-size: 36px
+    &--lamp
+      background: url("../images/lamp.jpg") 50% no-repeat
+      background-size: cover
+    &--screens
+      background: url("../images/screen.jpg") 50% no-repeat
+      background-size: cover
+    &--solutions
+      background: url("../images/projection.jpg") 50% no-repeat
+      background-size: cover
+    &:hover
+      filter: brightness(1)
 
 
 /* STAGES SECTION */

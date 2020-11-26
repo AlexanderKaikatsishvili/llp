@@ -619,6 +619,8 @@ header.header--active #menu-icon span,
 .hero-section__content .hero-slider__description {
   max-width: 570px;
   color: #f2f2f2;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 .hero-section__content .hero-slider__item {
   min-height: calc(100vh - 140px);
@@ -727,8 +729,29 @@ header.header--active #menu-icon span,
 }
 
 /* PRODUCTS SECTION */
-.products-section .grid-block {
-  padding: 7rem 0;
+.products-section .product-item {
+  background-size: cover;
+  min-height: 350px;
+  filter: brightness(0.6);
+}
+.products-section .product-item h3 {
+  color: #fff;
+  font-size: 36px;
+}
+.products-section .product-item--lamp {
+  background: url("../images/lamp.jpg") 50% no-repeat;
+  background-size: cover;
+}
+.products-section .product-item--screens {
+  background: url("../images/screen.jpg") 50% no-repeat;
+  background-size: cover;
+}
+.products-section .product-item--solutions {
+  background: url("../images/projection.jpg") 50% no-repeat;
+  background-size: cover;
+}
+.products-section .product-item:hover {
+  filter: brightness(1);
 }
 
 /* STAGES SECTION */
