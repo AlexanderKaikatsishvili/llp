@@ -948,9 +948,6 @@ header.header--active #menu-icon span,
   display: flex;
   flex-direction: column;
 }
-.footer__contacts .footer-social-links a {
-  margin-right: 1rem;
-}
 .footer__contacts a {
   font-size: 14px;
 }
@@ -961,6 +958,9 @@ header.header--active #menu-icon span,
 }
 .footer__info {
   grid-column: 7;
+}
+.footer__info .footer-social-links a {
+  margin-right: 1rem;
 }
 .footer__info .developer a {
   text-decoration: underline;
