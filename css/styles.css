@@ -210,9 +210,13 @@ button.btn-secondary:hover {
 }
 .grid--dark {
   background-color: rgba(17, 17, 17, 0.8);
+  background-size: cover;
 }
 .grid--dark .grid-column {
   border-right: 1px solid #1b1b1b;
+}
+.grid--dark.grid--dark-mobile {
+  background: url("../images/hero-bg-alt.jpg") 80% 50% no-repeat;
 }
 
 .e-mail {
