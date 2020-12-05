@@ -82,11 +82,11 @@ button
 /* PRELOADER STYLES */
 
 .preloader
-  //display: none
   position: fixed
   width: 100%
   height: 100%
   z-index: 200
+  top: 0
   background-color: $color-black
   display: flex
   justify-content: center
@@ -270,9 +270,6 @@ button
       path
         stroke: $color-primary
 
-.z-index
-  z-index: 90
-
 .overlay
   position: fixed
   top: 0
@@ -324,6 +321,9 @@ button
   color: $color-black
   text-indent: -5px
   margin-bottom: 2rem
+  @media (max-width: 699px)
+    font-size: 44px
+    line-height: 100%
 
 .title-t2
   font:
@@ -742,6 +742,7 @@ header.header--active,
 
 .footer
   background-color: $color-primary
+  width: 100%
   position: fixed
   bottom: 0
   z-index: -1
@@ -813,6 +814,8 @@ header.header--active,
     .footer-social-links
       a
         margin-right: 1rem
+        &:hover
+          text-decoration: none
     .developer
       a
         text-decoration: underline
@@ -842,6 +845,7 @@ video
   position: fixed
   top: 70px
   display: grid
+  z-index: -10
   grid-template-columns: repeat(2, 1fr)
   min-height: calc(100vh - 70px)
   @media (max-width: 699px)
@@ -889,6 +893,7 @@ video
   width: 100%
   position: fixed
   top: 70px
+  z-index: -10
   &__block
     transition: all 1s ease
     background: $color-primary url("../images/order-bg.svg")
