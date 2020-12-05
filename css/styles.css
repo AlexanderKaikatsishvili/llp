@@ -209,7 +209,7 @@ button.btn-secondary:hover {
   border-right: unset;
 }
 .grid--dark {
-  background-color: rgba(17, 17, 17, 0.8);
+  background-color: rgba(17, 17, 17, 0.4);
   background-size: cover;
 }
 .grid--dark .grid-column {
@@ -269,7 +269,7 @@ button.btn-secondary:hover {
   }
 }
 
-.callback {
+.scroll-top {
   background-color: #1459A3;
   width: 60px;
   height: 60px;
@@ -282,15 +282,21 @@ button.btn-secondary:hover {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: all 0.2s ease;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.04), 0 16px 24px rgba(0, 0, 0, 0.06), 0 -2px 6px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
 }
-.callback:hover {
+.scroll-top--active {
+  opacity: 1;
+  visibility: visible;
+}
+.scroll-top:hover {
   background-color: #f2f2f2;
   border: 1px solid #1459A3;
 }
-.callback:hover svg path {
-  fill: #1459A3;
+.scroll-top:hover svg path {
+  stroke: #1459A3;
 }
 
 .z-index {
@@ -392,9 +398,11 @@ header.header {
   grid-template-columns: 100px repeat(6, 1fr) 100px;
   grid-template-rows: 1fr;
   position: fixed;
+  top: 0;
   z-index: 80;
   width: 100%;
   border-bottom: 1px solid #1b1b1b;
+  transition: top 0.3s;
 }
 @media (max-width: 1440px) {
   header.header {
@@ -930,7 +938,9 @@ header.header--active #menu-icon span,
 /* FOOTER */
 .footer {
   background-color: #1459A3;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
   display: grid;
   grid-template-columns: 100px repeat(6, 1fr) 100px;
   grid-template-rows: 1fr;
