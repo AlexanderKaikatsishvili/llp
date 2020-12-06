@@ -148,7 +148,6 @@ $(".order__btn").on('click', function(){
     if(orderBlock.hasClass('transition')) {
         email.addClass('e-mail-active-imp');
         socials.addClass('social-links-active-imp');
-        header.addClass('header--active-imp');
     }
 });
 
@@ -161,26 +160,24 @@ $(".close").on('click', function(){
     $(".close").removeClass('d-block');
     email.removeClass('e-mail-active-imp');
     socials.removeClass('social-links-active-imp');
-    header.removeClass('header--active-imp');
 });
 
 $("#menu-icon").on('click', function(){
-    $(this).addClass('open');
     $(".menu").css("z-index", "90");
-    $("#menu-icon-wrapper").addClass("d-block");
+    $('.menu-close').delay(1000).queue(function(){
+        $( this ).addClass('d-block');
+        $( this ).dequeue();
+    });
 
     menuBlock.addClass('transition');
     email.addClass('e-mail-active-imp');
     socials.addClass('social-links-active-imp-b');
-    header.addClass('header--active-imp');
 });
 
-$("#menu-icon-wrapper").on('click', function(){
-    $("#menu-icon").removeClass('open');
+$(".menu-close").on('click', function(){
     menuBlock.removeClass('transition');
     email.removeClass('e-mail-active-imp');
     socials.removeClass('social-links-active-imp-b');
-    header.removeClass('header--active-imp');
 
     $(".menu").delay(1000).queue(function(){
         $( this ).css("z-index", "-10");

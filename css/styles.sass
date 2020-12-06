@@ -843,15 +843,17 @@ video
 .menu
   width: 100%
   position: fixed
-  top: 70px
+  top: 0
   display: grid
   z-index: -10
   grid-template-columns: repeat(2, 1fr)
-  min-height: calc(100vh - 70px)
+  min-height: 100vh
   @media (max-width: 699px)
     grid-template-columns: 1fr
   &__block
     transition: all 1s ease
+    height: 100vh
+    overflow-y: scroll
     &--left
       transition: all 1s ease
       background: $color-primary url("../images/order-bg.svg")
@@ -892,14 +894,16 @@ video
 .order
   width: 100%
   position: fixed
-  top: 70px
+  top: 0
   z-index: -10
   &__block
     transition: all 1s ease
     background: $color-primary url("../images/order-bg.svg")
-    min-height: calc(100vh - 70px)
+    min-height: 100vh
     transform: translateY(100%)
     @include grid
+    height: 100vh
+    overflow-y: scroll
     .content-block
       .title-t2,
       p
@@ -923,61 +927,18 @@ video
   transform: translateY(0)
   transition: all 1s ease
 
-.close
+.close,
+.menu-close
   display: none
   position: fixed
-  top: 100px
-  right: 34px
+  top: 40px
+  right: 40px
   z-index: 40
   cursor: pointer
   transform-origin: center
   transition: all .4s ease
   &:hover
     transform: rotate(360deg)
-
-
-
-
-/* CURSOR STYLING */
-
-.cursor
-  z-index: 9999
-  pointer-events: none
-  position: fixed
-  top: 0
-  left: 0
-  display: none
-
-.cursor__inner
-  z-index: 9999
-  pointer-events: none
-  position: absolute
-  top: 0
-  left: 0
-  border-radius: 50%
-
-.cursor__inner--dot
-  width: 5px
-  height: 5px
-  background: #023da7
-
-.cursor__inner--circle
-  width: 40px
-  height: 40px
-  border: 1px solid #023da7
-
-.cursor__inner--text::after
-  content: ' →'
-  margin-left: 1rem
-  display: block
-  color: #f6cb03
-  font-size: 4rem
-
-//@media screen and (min-width: 53em)
-//  *,
-//  *::after,
-//  *::before
-//    cursor: none !important
 
 
 /* SLIDER STYLES */
