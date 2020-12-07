@@ -27,8 +27,8 @@ st.on('click', function(e) {
 
 $(document).ready(function(){
     $(".hero-slider").slick({
-        // autoplay:true,
-        autoplaySpeed:6000,
+        autoplay:true,
+        autoplaySpeed:8000,
         speed:600,
         pauseOnHover: false,
         cssEase:'linear',
@@ -36,21 +36,21 @@ $(document).ready(function(){
         arrows: false,
     });
 
-    $(".slider").slick({
-        // autoplay:true,
-        autoplaySpeed:10000,
-        speed:600,
-        slidesToShow:1,
-        slidesToScroll:1,
-        pauseOnHover:true,
-        dots:true,
-        pauseOnDotsHover:true,
-        cssEase:'linear',
-        fade:true,
-        // draggable:false,
-        // prevArrow:'<button class="PrevArrow"></button>',
-        // nextArrow:'<button class="NextArrow"></button>',
-    });
+    // $(".slider").slick({
+    //     // autoplay:true,
+    //     autoplaySpeed:10000,
+    //     speed:600,
+    //     slidesToShow:1,
+    //     slidesToScroll:1,
+    //     pauseOnHover:true,
+    //     dots:true,
+    //     pauseOnDotsHover:true,
+    //     cssEase:'linear',
+    //     fade:true,
+    //     // draggable:false,
+    //     // prevArrow:'<button class="PrevArrow"></button>',
+    //     // nextArrow:'<button class="NextArrow"></button>',
+    // });
 });
 
 
@@ -90,6 +90,10 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 
 let header = $('.header');
 
+if($(window).scrollTop()>=100){
+    header.addClass('header--active');
+}
+
 $(window).scroll(function(){
     if($(this).scrollTop()>=100){
         header.addClass('header--active');
@@ -97,22 +101,6 @@ $(window).scroll(function(){
         header.removeClass('header--active');
     }
 });
-
-
-/* CONTAINER MARGIN BOTTOM CALCULATION */
-
-let footer = $('.footer');
-let contentWrapper = $('.content-container__wrapper');
-
-let footerHeight = footer.outerHeight();
-contentWrapper.css("margin-bottom", footerHeight);
-
-window.addEventListener('resize', resizedFooterHeight);
-
-function resizedFooterHeight() {
-    footerHeight = footer.outerHeight();
-    contentWrapper.css("margin-bottom", footerHeight);
-}
 
 
 /* CHANGING COLOR OF THE SOCIALS LINKS ASIDE */
@@ -186,6 +174,18 @@ $(".menu-close").on('click', function(){
     $(this).removeClass("d-block");
 });
 
+$(".menu-list__link").on('click', function(){
+    menuBlock.removeClass('transition');
+    email.removeClass('e-mail-active-imp');
+    socials.removeClass('social-links-active-imp-b');
+
+    $(".menu").delay(1000).queue(function(){
+        $( this ).css("z-index", "-10");
+        $( this ).dequeue();
+    });
+    $(this).removeClass("d-block");
+});
+
 
 
 /* GSUP SMOOTH PAGE SCROLL */
@@ -193,6 +193,8 @@ $(".menu-close").on('click', function(){
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     $(".grid--dark").addClass("grid--dark-mobile");
     $("[data-aos^=fade][data-aos^=fade]").css("opacity", "1");
+
+    $('.footer').css('position', 'initial');
 
     /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 
@@ -211,10 +213,26 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
     /* INITIALISATION AOS PLUGIN */
 
-    AOS.init({
-        offset: -300,
-        once: true,
-    });
+    // AOS.init({
+    //     // offset: -300,
+    //     once: true,
+    // });
+
+
+    /* CONTAINER MARGIN BOTTOM CALCULATION */
+
+    let footer = $('.footer');
+    let contentWrapper = $('.content-container__wrapper');
+
+    let footerHeight = footer.outerHeight();
+    contentWrapper.css("margin-bottom", footerHeight);
+
+    window.addEventListener('resize', resizedFooterHeight);
+
+    function resizedFooterHeight() {
+        footerHeight = footer.outerHeight();
+        contentWrapper.css("margin-bottom", footerHeight);
+    }
 
 
     (function() {

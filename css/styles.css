@@ -34,6 +34,7 @@ p {
 
 button {
   padding: 0.5rem 2rem;
+  min-width: 160px;
   display: block;
   width: max-content;
   background-color: #1459A3;
@@ -179,6 +180,30 @@ button.btn-secondary:hover {
   }
 }
 /* BASIC CLASSES */
+.text-pr {
+  padding-right: 1.5rem;
+}
+@media (max-width: 699px) {
+  .text-pr {
+    padding-right: 0;
+  }
+}
+
+.text-pl {
+  padding-left: 1.5rem;
+}
+@media (max-width: 699px) {
+  .text-pl {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 699px) {
+  .order-down {
+    order: -1;
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: 100px repeat(6, 1fr) 100px;
@@ -341,6 +366,11 @@ button.btn-secondary:hover {
   left: -110px;
   top: 36px;
   background-color: #1459A3;
+}
+@media (max-width: 1440px) {
+  .accent-line:before {
+    content: none;
+  }
 }
 
 .flex-center {
@@ -779,6 +809,10 @@ header.header--active #menu-icon span,
 }
 
 /* PRODUCTS SECTION */
+.products-section .grid-block {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
 .products-section .product-item {
   background-size: cover;
   min-height: 350px;
@@ -793,15 +827,26 @@ header.header--active #menu-icon span,
   background-size: cover;
 }
 .products-section .product-item--screens {
-  background: url("../images/screen.jpg") 50% no-repeat;
+  background: url("../images/led-screen.jpg") 50% no-repeat;
   background-size: cover;
 }
 .products-section .product-item--solutions {
-  background: url("../images/projection.jpg") 50% no-repeat;
+  background: url("../images/projection-m.jpg") 50% no-repeat;
   background-size: cover;
 }
 .products-section .product-item:hover {
   filter: brightness(1);
+}
+@media (max-width: 1024px) {
+  .products-section .product-item {
+    min-height: 250px;
+  }
+}
+@media (max-width: 699px) {
+  .products-section .product-item {
+    min-height: 200px;
+    margin-bottom: 1rem;
+  }
 }
 
 /* STAGES SECTION */
@@ -1128,7 +1173,7 @@ video {
 .menu__block {
   transition: all 1s ease;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .menu__block--left {
   transition: all 1s ease;
@@ -1200,7 +1245,7 @@ video {
   grid-template-columns: 100px repeat(6, 1fr) 100px;
   grid-template-rows: 1fr;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 @media (max-width: 1440px) {
   .order__block {
@@ -1258,8 +1303,8 @@ video {
 .menu-close {
   display: none;
   position: fixed;
-  top: 40px;
-  right: 40px;
+  top: 20px;
+  right: 30px;
   z-index: 40;
   cursor: pointer;
   transform-origin: center;
@@ -1268,6 +1313,12 @@ video {
 .close:hover,
 .menu-close:hover {
   transform: rotate(360deg);
+}
+
+@media (max-width: 699px) {
+  .menu-close svg line {
+    stroke: #fff;
+  }
 }
 
 /* SLIDER STYLES */

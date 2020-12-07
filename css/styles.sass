@@ -57,6 +57,7 @@ p
 
 button
   padding: .5rem 2rem
+  min-width: 160px
   display: block
   width: max-content
   background-color: $color-primary
@@ -183,6 +184,20 @@ button
 
 /* BASIC CLASSES */
 
+.text-pr
+  padding-right: 1.5rem
+  @media (max-width: 699px)
+    padding-right: 0
+
+.text-pl
+  padding-left: 1.5rem
+  @media (max-width: 699px)
+    padding-left: 0
+
+.order-down
+  @media (max-width: 699px)
+    order: -1
+
 .grid
   @include grid
   width: 100%
@@ -306,6 +321,8 @@ button
     left: -110px
     top: 36px
     background-color: $color-primary
+    @media (max-width: 1440px)
+      content: none
 
 .flex-center
   display: flex
@@ -630,6 +647,9 @@ header.header--active,
 /* PRODUCTS SECTION */
 
 .products-section
+  .grid-block
+    padding-top: 8rem
+    padding-bottom: 8rem
   .product-item
     background-size: cover
     min-height: 350px
@@ -641,13 +661,18 @@ header.header--active,
       background: url("../images/lamp.jpg") 50% no-repeat
       background-size: cover
     &--screens
-      background: url("../images/screen.jpg") 50% no-repeat
+      background: url("../images/led-screen.jpg") 50% no-repeat
       background-size: cover
     &--solutions
-      background: url("../images/projection.jpg") 50% no-repeat
+      background: url("../images/projection-m.jpg") 50% no-repeat
       background-size: cover
     &:hover
       filter: brightness(1)
+    @media (max-width: 1024px)
+      min-height: 250px
+    @media (max-width: 699px)
+      min-height: 200px
+      margin-bottom: 1rem
 
 
 /* STAGES SECTION */
@@ -853,7 +878,7 @@ video
   &__block
     transition: all 1s ease
     height: 100vh
-    overflow-y: scroll
+    overflow-y: auto
     &--left
       transition: all 1s ease
       background: $color-primary url("../images/order-bg.svg")
@@ -903,7 +928,7 @@ video
     transform: translateY(100%)
     @include grid
     height: 100vh
-    overflow-y: scroll
+    overflow-y: auto
     .content-block
       .title-t2,
       p
@@ -931,14 +956,20 @@ video
 .menu-close
   display: none
   position: fixed
-  top: 40px
-  right: 40px
+  top: 20px
+  right: 30px
   z-index: 40
   cursor: pointer
   transform-origin: center
   transition: all .4s ease
   &:hover
     transform: rotate(360deg)
+
+.menu-close
+  @media (max-width: 699px)
+    svg
+      line
+        stroke: #fff
 
 
 /* SLIDER STYLES */
