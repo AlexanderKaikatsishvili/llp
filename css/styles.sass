@@ -776,6 +776,7 @@ header.header--active,
   padding-bottom: 2rem
   @media (max-width: 1440px)
     padding-bottom: 0
+    grid-row-gap: 2rem
   @media (max-width: 1024px)
     grid-template-columns: 50px repeat(2, 1fr) 50px
   @media (max-width: 699px)
@@ -785,6 +786,7 @@ header.header--active,
     font-size: 12px
   &-title
     color: $color-white
+    margin-bottom: 1rem
   &__nav
     grid-column: 2
     ul
@@ -799,8 +801,7 @@ header.header--active,
   &__order
     grid-column: 3
     @media (max-width: 699px)
-      grid-column: 2
-      grid-row: 3
+      display: none
   &__rights
     grid-column: 4 / 6
     display: flex
@@ -815,7 +816,7 @@ header.header--active,
     @media (max-width: 1024px)
       grid-row: 3
     @media (max-width: 699px)
-      grid-row: 6
+      grid-row: 4
     p
       margin-bottom: 0
       margin-top: .5rem
@@ -826,6 +827,7 @@ header.header--active,
     flex-direction: column
     a
       font-size: 14px
+      margin-bottom: .5rem
     @media (max-width: 1440px)
       grid-column: 4
     @media (max-width: 1024px)
@@ -833,7 +835,7 @@ header.header--active,
       grid-column: 2
     @media (max-width: 699px)
       grid-column: 2
-      grid-row: 4
+      grid-row: 2
   &__info
     grid-column: 7
     .footer-social-links
@@ -842,6 +844,7 @@ header.header--active,
         &:hover
           text-decoration: none
     .developer
+      margin-top: 1rem
       a
         text-decoration: underline
     @media (max-width: 1440px)
@@ -851,7 +854,7 @@ header.header--active,
       grid-column: 3
     @media (max-width: 699px)
       grid-column: 2
-      grid-row: 5
+      grid-row: 3
 
 #player
   position: fixed
