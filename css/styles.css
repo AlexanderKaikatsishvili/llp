@@ -417,6 +417,7 @@ button.btn-secondary:hover {
   line-height: 110%;
   margin-left: -2px;
   color: #111;
+  margin-bottom: 1.6rem;
 }
 @media (max-width: 699px) {
   .title-t3 {
@@ -1013,6 +1014,7 @@ main section {
 @media (max-width: 699px) {
   .clients-section .grid-frame .grid-body .grid-block {
     grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 2rem;
   }
 }
 .clients-section .client {
