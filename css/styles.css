@@ -425,6 +425,21 @@ button.btn-secondary:hover {
   }
 }
 
+.title-t4 {
+  font-family: Geometria, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  margin-left: -2px;
+  color: #111;
+  margin-bottom: 1.6rem;
+}
+@media (max-width: 699px) {
+  .title-t4 {
+    margin-bottom: 0.5rem;
+  }
+}
+
 .subtitle-t1 {
   font-family: Roboto, sans-serif;
   font-weight: 300;
@@ -873,6 +888,25 @@ main section {
     min-height: 200px;
     margin-bottom: 1rem;
   }
+}
+
+/* AUDIENCE SECTION */
+.audience-section .grid-frame .grid-body:hover .audience-item {
+  opacity: 0.5;
+}
+@media (max-width: 1024px) {
+  .audience-section .grid-frame .grid-body .grid-block {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 2rem;
+  }
+}
+@media (max-width: 699px) {
+  .audience-section .grid-frame .grid-body .grid-block {
+    grid-template-columns: 1fr;
+  }
+}
+.audience-section .audience-item:hover {
+  opacity: 1 !important;
 }
 
 /* STAGES SECTION */
