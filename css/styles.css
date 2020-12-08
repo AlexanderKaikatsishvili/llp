@@ -909,6 +909,25 @@ main section {
   opacity: 1 !important;
 }
 
+/* BENEFITS SECTION */
+.benefits-section .grid-frame .grid-body:hover .benefits-item {
+  opacity: 0.5;
+}
+@media (max-width: 1024px) {
+  .benefits-section .grid-frame .grid-body .grid-block {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 2rem;
+  }
+}
+@media (max-width: 699px) {
+  .benefits-section .grid-frame .grid-body .grid-block {
+    grid-template-columns: 1fr;
+  }
+}
+.benefits-section .benefits-item:hover {
+  opacity: 1 !important;
+}
+
 /* STAGES SECTION */
 .stages-section .grid-block {
   padding-bottom: 8rem;

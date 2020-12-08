@@ -720,6 +720,25 @@ main
     &:hover
       opacity: 1 !important
 
+
+/* BENEFITS SECTION */
+
+.benefits-section
+  .grid-frame
+    .grid-body
+      &:hover .benefits-item
+        opacity: .5
+      .grid-block
+        @media (max-width: 1024px)
+          grid-template-columns: repeat(2, 1fr)
+          grid-row-gap: 2rem
+        @media (max-width: 699px)
+          grid-template-columns: 1fr
+  .benefits-item
+    &:hover
+      opacity: 1 !important
+
+
 /* STAGES SECTION */
 
 .stages-section
